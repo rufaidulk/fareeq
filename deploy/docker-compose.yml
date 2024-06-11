@@ -1,0 +1,21 @@
+version: "3.9"
+
+# Services
+services:
+  srvchat:
+    build: ./../srvchat
+    container_name: srvchat
+    volumes:
+      - ./../srvchat:/go
+    ports:
+      - 4000:4000
+    env_file:
+      - .env
+    networks:
+      - fareeq_network
+
+networks:
+  fareeq_network:
+    name: fareeq_network
+
+  
